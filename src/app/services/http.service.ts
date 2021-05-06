@@ -9,10 +9,10 @@ export class HttpService {
 
   constructor(private http: HttpClient) { }
 
-  private regionalbloc = "USAN";
-  private urlBase = "https://restcountries.eu/rest/v2/regionalbloc/"; // URL to web api
+  private user = "fmorales86mb";
+  private urlBase = "https://api.github.com/users/";
 
-  public getPais(): Observable<any[]> {
-    return this.http.get<any[]>(this.urlBase + this.regionalbloc);
+  public getData() {
+    return this.http.get<any[]>(this.urlBase + this.user);
   }
 }

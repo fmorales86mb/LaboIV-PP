@@ -1,0 +1,49 @@
+<main class="form-signin">
+    <form [formGroup]="loginForm" (ngSubmit)="clickIngresar()">
+      
+      <h1 class="h3 mb-3 fw-normal text-center">Bienvenid@</h1>
+  
+      <div class="row text-center mb-3">
+        <div class="col">
+          <button class="w-100 btn btn-secondary" type="button" (click)="cargarUsuario(1)" [disabled]="showSpinner">Usuario 1</button>
+        </div>
+        <div class="col">
+          <button class=" w-100 btn btn-secondary" type="button" (click)="cargarUsuario(2)" [disabled]="showSpinner">Usuario 2</button>
+        </div>
+      </div>      
+
+      <div class="form-floating">
+        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" [(ngModel)]="credential.email" formControlName="emailCtrl">
+        <label for="floatingInput">Email</label>
+        <div class="errors">
+          <small class="invalid" *ngIf="getEmailCtrl()?.errors?.required && getEmailCtrl()?.touched">Campo obligatorio</small>
+          <small class="invalid" *ngIf="getEmailCtrl()?.errors?.email && getEmailCtrl()?.touched">Formato incorrecto</small>
+        </div>
+        
+      </div>
+      <div class="form-floating">
+        <input type="password" class="form-control" id="floatingPassword" placeholder="Password" [(ngModel)]="credential.pass" formControlName="passCtrl">
+        <label for="floatingPassword">Contraseña</label>
+      </div>
+      <div class="errors">
+        <small class="invalid" *ngIf="getPassCtrl()?.errors?.required && getPassCtrl()?.touched">Campo obligatorio</small>
+        <small class="invalid" *ngIf="getPassCtrl()?.errors?.minlength && getPassCtrl()?.touched">Mínimo 6 caracteres</small>
+      </div>
+  
+      <div>
+        <button class="w-100 btn btn-lg btn-primary" type="submit" [disabled]="loginForm.invalid || showSpinner">Ingresar</button>
+      </div>
+      <br>
+      <div class="mb-2">
+        <small class=""><a [routerLink]="" (click)="goToRegister()">¿Todavía no te registraste?</a></small>
+      </div>
+      
+      <app-spinner-shared [showSpinner] = "showSpinner"></app-spinner-shared>
+
+      <div class="alert alert-danger small" role="alert"  *ngIf="hasAlert" >
+        {{alertMessage}}
+      </div>
+      
+      <p class="mt-5 mb-3 text-muted text-center">Federico Morales 4°B 2021</p>
+    </form>
+</main>

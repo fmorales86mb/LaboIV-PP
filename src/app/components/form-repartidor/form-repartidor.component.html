@@ -1,0 +1,66 @@
+<h4 class="mb-3">Billing address</h4>
+<form class="needs-validation" [formGroup]="form" (ngSubmit)="save()">
+  <div class="row g-3">
+    <div class="col-sm-6">
+      <label for="firstName" class="form-label">Nombre</label>
+      <input type="text" class="form-control" id="firstName" formControlName="nameCtrl">
+      <div class="invalid" *ngIf="getnameCtrl()?.errors?.required && getnameCtrl()?.touched">
+        Campo requerido
+      </div>
+    </div>
+
+    <div class="col-sm-6">
+      <label for="firstName" class="form-label">DNI</label>
+      <input type="text" class="form-control" id="firstName" formControlName="dniCtrl">
+      <div class="invalid" *ngIf="getdniCtrl()?.errors?.required && getdniCtrl()?.touched">
+        Campo requerido
+      </div>
+      <div class="invalid" *ngIf="getdniCtrl()?.errors?.pattern && getdniCtrl()?.touched">
+        Sólo números
+      </div>
+    </div>
+    
+
+    <div class="col-12">
+      <label for="" class="form-label">Edad <span class="text-muted"></span></label>
+      <input type="text" class="form-control" id="" formControlName="ageCtrl">
+      <div class="invalid" *ngIf="getageCtrl()?.errors?.required && getageCtrl()?.touched">
+        Campo requerido
+      </div>
+      <div class="invalid" *ngIf="getageCtrl()?.errors?.pattern && getageCtrl()?.touched">
+        Sólo números
+      </div>
+    </div>
+
+    <div class="col-12">
+      <label for="" class="form-label">Capacidad de Transporte <span class="text-muted"></span></label>
+      <input type="text" class="form-control" id="" formControlName="pizzasCtrl">
+      <div class="invalid" *ngIf="getpizzasCtrl()?.errors?.required && getpizzasCtrl()?.touched">
+        Campo requerido
+      </div>
+      <div class="invalid" *ngIf="getpizzasCtrl()?.errors?.pattern && getpizzasCtrl()?.touched">
+        Sólo números
+      </div>
+    </div>
+
+    <div class="col-md-5">
+      <label for="country" class="form-label">Pais</label>
+      <input type="text" class="form-control" id="" [(ngModel)]="paisSeleccionado" disabled formControlName="paisCtrl">
+      <div class="invalid" *ngIf="getpaisCtrl()?.errors?.required && getpaisCtrl()?.touched">
+        Campo requerido
+      </div>
+    </div>
+
+  </div>
+
+  <hr class="my-4">
+
+  <div class="form-check">
+    <input type="checkbox" class="form-check-input" id="same-address" formControlName="unidadCtrl">
+    <label class="form-check-label" for="same-address">Unidad Propia</label>
+  </div>
+
+  <hr class="my-4">
+
+  <button class="w-100 btn btn-primary btn-lg" type="submit">Guardar</button>
+</form>

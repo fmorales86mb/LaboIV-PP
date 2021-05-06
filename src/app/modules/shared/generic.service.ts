@@ -9,7 +9,7 @@ export class Generic<T>{
       
     }
 
-    protected setCollection(collName:string){
+    public setCollection(collName:string){
       this.itemsCollection = this.afs.collection<T>(collName);
       this.items = this.itemsCollection.valueChanges();
     }
