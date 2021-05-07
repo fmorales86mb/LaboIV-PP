@@ -50,7 +50,7 @@ export class LoginComponent implements OnInit {
       user.name = "empleado";
       this.userService.currentUser =user;
       this.authService.isAuth = true;
-      this.router.navigate(['altas-repartidor']);
+      this.router.navigate(['lista-repartidor']);
     }
     else if(this.credential.GetEmail() == this.admin.GetEmail() && this.credential.GetPass() == this.admin.GetPass()){
       let user = new User();
@@ -58,7 +58,7 @@ export class LoginComponent implements OnInit {
       user.name = "admin";
       this.userService.currentUser =user;
       this.authService.isAuth = true;
-      this.router.navigate(['altas-repartidor']);
+      this.router.navigate(['lista-repartidor']);
     }
     else{
       this.alertMessage = "Usuario inválido";

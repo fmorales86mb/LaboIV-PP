@@ -17,6 +17,9 @@ import { BienvenidaComponent } from './pages/bienvenida/bienvenida.component';
 import { AltasRepartidorComponent } from './pages/altas-repartidor/altas-repartidor.component';
 import { FormRepartidorComponent } from './components/form-repartidor/form-repartidor.component';
 import { ListadoPaisesComponent } from './components/listado-paises/listado-paises.component';
+import { RepartidorComponent } from './pages/repartidor/repartidor.component';
+import { RepartidorDetalleComponent } from './component/repartidor-detalle/repartidor-detalle.component';
+import { RepartidorPaisComponent } from './component/repartidor-pais/repartidor-pais.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +28,10 @@ import { ListadoPaisesComponent } from './components/listado-paises/listado-pais
     BienvenidaComponent,
     AltasRepartidorComponent,
     FormRepartidorComponent,
-    ListadoPaisesComponent
+    ListadoPaisesComponent,
+    RepartidorComponent,
+    RepartidorDetalleComponent,
+    RepartidorPaisComponent
   ],
   imports: [
     BrowserModule,
